@@ -38,7 +38,6 @@ class LinkedListItem
         1
       end
     end
-
   end
 
   def ===(item)
