@@ -1,20 +1,23 @@
 class LinkedList
-attr_accessor :new_item
+
   def initialize
-  # @count = 0
-  @head = nil
+    @count = 0
   end
 
   def add_item(item)
-    # @get = item
+    new_item = LinkedListItem.new(item)
+    item = @head
     if @head.nil?
-      @head = LinkedListItem.new(item)
+      @head = new_item
+      # @count += 1
     else
-     @head.next_list_item = LinkedListItem.new(item)
+     # @head.next_list_item = LinkedListItem.new(item)
+     @count.times do
+      item = item.next_list_item
+     end
+     item.next_list_item = new_item
+     @count += 1
     end
-
-    # @head = 0
-    # @count += 1
   end
 
   def get(index)
@@ -27,11 +30,6 @@ attr_accessor :new_item
       end
       item.payload
     end
-    # @get
   end
 
-
-  # def head
-  #   @head
-  # end
 end
