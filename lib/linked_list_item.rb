@@ -25,8 +25,22 @@ class LinkedListItem
   end
 
   def <=>(item)
-    self.payload.to_s<=>item.payload.to_s
+    if self.payload.class == item.payload.class
+      self.payload <=> item.payload
+    else
+      if self.payload.class == Symbol && item.payload.class == String
+        1
+      elsif self.payload.class == String && item.payload.class == Symbol
+        -1
+      elsif self.payload.class == Fixnum && item.payload.class == String
+        -1
+      elsif self.payload.class == String && item.payload.class == Fixnum
+        1
+      end
+    end
+
   end
+
   def ===(item)
     self.object_id == item.object_id
   end
