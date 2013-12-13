@@ -1,7 +1,8 @@
 class LinkedList
-
+# attr_reader :size
   def initialize(*payload)
     @count = 0
+    @size = 0
   end
 
   def add_item(payload)
@@ -9,15 +10,15 @@ class LinkedList
     item = @head
       if @head.nil?
         @head = new_item
+        @size += 1
       else
         @count.times do
         item = item.next_list_item
         end
-        #
-        # else
           item.next_list_item = new_item
           @count += 1
-        # end
+          @size +=1
+
       end
   end
 
@@ -33,6 +34,10 @@ class LinkedList
       end
       item.payload
     end
+  end
+
+  def size
+    @size
   end
 
 end
