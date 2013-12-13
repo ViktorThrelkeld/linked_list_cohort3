@@ -40,4 +40,8 @@ class LinkedList
     @size
   end
 
+  def last
+    # puts.payload
+  end
+
 end
