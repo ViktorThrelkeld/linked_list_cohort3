@@ -7,17 +7,15 @@ class LinkedList
   def add_item(item)
     new_item = LinkedListItem.new(item)
     item = @head
-    if @head.nil?
-      @head = new_item
-      # @count += 1
-    else
-     # @head.next_list_item = LinkedListItem.new(item)
-     @count.times do
-      item = item.next_list_item
-     end
-     item.next_list_item = new_item
-     @count += 1
-    end
+      if @head.nil?
+        @head = new_item
+      else
+       @count.times do
+       item = item.next_list_item
+       end
+      item.next_list_item = new_item
+      @count += 1
+      end
   end
 
   def get(index)
