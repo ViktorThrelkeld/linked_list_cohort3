@@ -13,11 +13,8 @@ class LinkedList
     if @x == nil
      "| |"
     else
-
     "| "+ @x +" |"
-
     end
-
   end
 
   def add_item(payload)
@@ -32,8 +29,10 @@ class LinkedList
       else
         @count.times do
         item = item.next_list_item
+        # @x += item.payload
         end
           item.next_list_item = new_item
+          @x += ", " + new_item.payload
           @last = new_item
           @count += 1
           @size +=1
