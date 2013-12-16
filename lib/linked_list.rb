@@ -1,19 +1,19 @@
 class LinkedList
 
-  def initialize(*payload)
-    # if payload == nil
-    #   @x = nil
-    # end
+  def initialize(*seed)
     @count = 0
     @size = 0
     @last = nil
+    seed.each do |item|
+      add_item(seed)
+    end
   end
 
   def to_s
-    if @x == nil
+    if @head.nil?
      "| |"
-    else
-    "| "+ @x +" |"
+    # elsif
+    # "| #{@head.payload} |"
     end
   end
 
@@ -22,17 +22,13 @@ class LinkedList
     item = @head
       if @head.nil?
         @head = new_item
-        @last = @head
         @size += 1
-          @x = new_item.payload
-
+        @last = @head
       else
         @count.times do
         item = item.next_list_item
-        # @x += item.payload
         end
           item.next_list_item = new_item
-          @x += ", " + new_item.payload
           @last = new_item
           @count += 1
           @size +=1
@@ -40,7 +36,9 @@ class LinkedList
   end
 
   def get(index)
-    raise IndexError if index < 0
+    if index < 0
+      raise IndexError
+    end
     item = @head
     if index == 0
       @head.payload
