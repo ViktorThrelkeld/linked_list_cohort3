@@ -12,8 +12,15 @@ class LinkedList
   def to_s
     if @head.nil?
      "| |"
-    # elsif
-    # "| #{@head.payload} |"
+    else
+      value = @head.payload
+      item = @head
+      while !item.last?
+        item = item.next_list_item
+       value += item.payload
+      end
+
+    "| #{value} |"
     end
   end
 
