@@ -69,4 +69,13 @@ class LinkedList
     end
   end
 
+  def [](index)
+    get(index)
+  end
+
+  def []=(index, other)
+    # add_item(index)
+
+  end
+
 end
