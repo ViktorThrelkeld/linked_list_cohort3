@@ -5,7 +5,7 @@ class LinkedList
     @size = 0
     @last = nil
     seed.each do |item|
-      add_item(seed)
+      add_item(item)
     end
   end
 
@@ -17,10 +17,9 @@ class LinkedList
       item = @head
       while !item.last?
         item = item.next_list_item
-       value += item.payload
+       value += ", " + item.payload
       end
-
-    "| #{value} |"
+    '| ' + value + ' |'
     end
   end
 
