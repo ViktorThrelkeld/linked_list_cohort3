@@ -81,4 +81,13 @@ class LinkedList
     item.payload = newpayload
   end
 
+  def remove(index)
+    item = @head
+    index.times do
+    item = item.next_list_item
+    end
+    item = nil
+    @size -= 1
+  end
+
 end
