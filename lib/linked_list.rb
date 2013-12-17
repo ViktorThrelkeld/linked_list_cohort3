@@ -73,9 +73,12 @@ class LinkedList
     get(index)
   end
 
-  def []=(index, other)
-    # add_item(index)
-
+  def []=(index, newpayload)
+    item = @head
+    index.times do
+    item = item.next_list_item
+    end
+    item.payload = newpayload
   end
 
 end
